@@ -72,7 +72,7 @@
 
 <!-- Hints -->
 <p class="hint"><strong>Key 1:</strong> Sachiko's Favorite Image<br>
-<span style="font-size:0.8em;">(you don't need to type .jpg, just the name of the image)</span></p>
+<span style="font-size:0.8em;">(type the full name of the image, there are hints in the dark path)</span></p>
 
 <p class="hint"><strong>Key 2:</strong> Listen closely — the code sleeps in the forest, the house, and the apartments, hidden among the ambience</p>
 
@@ -87,13 +87,12 @@
 </a>
 
 <!-- Ambient audio -->
-<audio autoplay loop>
+<audio id="ambience" loop>
   <source src="cryptii.com.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
 </audio>
 
 <script>
-  const KEY1 = "Sachiko";               // first key
+  const KEY1 = "nagoya.jpeg";               // first key
   const KEY2 = "TensaiSachi";           // Vigenère-decoded second key
 
   function checkKeys() {
