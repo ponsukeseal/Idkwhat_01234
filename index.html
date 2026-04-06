@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>idkwhat_01234</title>
+<style>
+  body {
+    background-color: black;
+    color: #ccc;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+  }
+
+  h1 {
+    color: #ff66cc;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 10px auto;
+    line-height: 1.6em;
+  }
+
+  .cipher {
+    font-size: 2em;
+    color: #8888ff;
+    margin-bottom: 30px;
+    word-spacing: 8px;
+  }
+
+  .hint {
+    color: #aaa;
+    font-style: italic;
+    margin: 10px 0;
+  }
+
+  input {
+    padding: 8px;
+    margin: 10px;
+    width: 220px;
+    font-size: 1em;
+  }
+
+  button {
+    padding: 8px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  a {
+    color: #ff66cc;
+    margin-top: 30px;
+    display: none;
+    font-size: 1.2em;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<h1>idkwhat_01234</h1>
+
+<p class="cipher">R n p d h a K y l j t</p>
+
+<!-- Hints -->
+<p class="hint"><strong>Key 1:</strong> Sachiko's Favorite Image<br>
+<span style="font-size:0.8em;">(you don't need to type .jpg, just the name of the image)</span></p>
+
+<p class="hint"><strong>Key 2:</strong> Listen closely — the code sleeps in the forest, the house, and the apartments, hidden among the ambience</p>
+
+<!-- Inputs -->
+<input type="text" id="key1" placeholder="Enter Key 1"><br>
+<input type="text" id="key2" placeholder="Enter Key 2"><br>
+<button onclick="checkKeys()">Unlock</button>
+
+<!-- Reward link -->
+<a id="reward" href="https://ponsukeseal.github.io/Sachiko/" target="_blank">
+  Click here to see the hidden message & listen to the song
+</a>
+
+<!-- Ambient audio -->
+<audio autoplay loop>
+  <source src="cryptii.com.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  const KEY1 = "Sachiko";               // first key
+  const KEY2 = "TensaiSachi";           // Vigenère-decoded second key
+
+  function checkKeys() {
+    const input1 = document.getElementById('key1').value.trim();
+    const input2 = document.getElementById('key2').value.trim();
+
+    if (input1.toLowerCase() === KEY1.toLowerCase() &&
+        input2.toLowerCase() === KEY2.toLowerCase()) {
+      document.getElementById('reward').style.display = "block";
+      alert("Correct! You may now access the hidden page.");
+    } else {
+      alert("Incorrect keys. Try again.");
+    }
+  }
+</script>
+
+</body>
+</html>
