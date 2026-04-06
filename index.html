@@ -72,7 +72,8 @@
 
 <!-- Hints -->
 <p class="hint"><strong>Key 1:</strong> Sachiko's Favorite Image</p>
-<p style="font-size:0.8em; color:#888;">(Type the full name of the image as the first key "n-----_u---------")</p>
+<p style="font-size:0.8em; color:#888;">(Type the full name of the image as the first key "n----a.jpeg"</p>
+
 <p class="hint"><strong>Key 2:</strong> Listen closely — the code sleeps in the forest, the house, and the apartments, hidden among the ambience</p>
 
 <!-- Inputs -->
@@ -85,26 +86,15 @@
   Click here to see the hidden message & listen to the song
 </a>
 
-<!-- Ambience audio -->
-<audio id="ambience" loop>
+<!-- Ambient audio -->
+<audio controls loop>
   <source src="cryptii.com.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
 </audio>
-
-<button onclick="toggleAmbience()">Play Ambience</button>
 
 <script>
   const KEY1 = "nagoya.jpeg";        // first key
   const KEY2 = "TensaiSachi";        // Vigenère-decoded second key
-
-  const audio = document.getElementById('ambience');
-
-  function toggleAmbience() {
-    if (audio.paused) {
-      audio.play();
-    } else {
-      audio.pause();
-    }
-  }
 
   function checkKeys() {
     const input1 = document.getElementById('key1').value.trim();
